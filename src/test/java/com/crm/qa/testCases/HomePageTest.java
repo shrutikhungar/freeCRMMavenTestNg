@@ -23,7 +23,7 @@ public class HomePageTest extends TestBase{
 	ContactsPage contactPageObj;
 	DealsPage dealsPageObj;
 	TasksPage tasksPageObj;
-	
+	TestUtil testUtilObj;
 	public HomePageTest() throws IOException {
 		super();
 	}
@@ -32,17 +32,20 @@ public class HomePageTest extends TestBase{
 		initialization();
 		try {
 			loginPageObj=new LoginPage();
+			testUtilObj=new TestUtil();
+			contactPageObj=new ContactsPage();
 			homePageObj=loginPageObj.performLogin("shrutikhungar", "infyinfy");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}/*
-	@Test
-	public contactPageObj validateContactLinkClickTest() {
-		return contactPageObj homePageObj.clickContactLink();
 	}
 	@Test
+	public void validateContactLinkClickTest() throws Exception {
+		testUtilObj.switchToFrame("mainpanel");
+		contactPageObj = homePageObj.clickContactLink();
+	}
+	/*@Test
 	public void validateDealsLinkClickTest() {
 		
 	}
@@ -53,19 +56,20 @@ public class HomePageTest extends TestBase{
 	@Test
 	public void validateHomePageLabelTest() {
 		
-	}*/
+	}
 	
-	/*@Test(priority=1)
+	@Test(priority=1)
 	public void validateHomePageTitleTest() throws Exception {
 		String homePageTitleActual= homePageObj.getHomePageTitle();
 		System.out.println("homePageTitleActual:" +homePageTitleActual);
 		Assert.assertEquals(homePageTitleActual, "CRMPRO", "Home Page Title Not Match");
-	}*/
+	}
 	
 	@Test(priority=2)
 	public void validateUserTextTest() {
+		testUtilObj.switchToFrame("mainpanel");
 		Assert.assertTrue(homePageObj.getUserNameHomePageLabel());
-	}
+	}*/
 	
 	@AfterMethod
 	public void tearDown() {

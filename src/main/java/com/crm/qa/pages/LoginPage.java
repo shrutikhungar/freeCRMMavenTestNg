@@ -7,6 +7,7 @@ package com.crm.qa.pages;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -42,12 +43,12 @@ public class LoginPage extends TestBase{
 	
 	public HomePage performLogin(String uName,String pas) throws Exception{
 		//this refers to the current class objects
-
+		Thread.sleep(3000);
 		userName.clear();
 		userName.sendKeys(uName);
 		password.clear();
 		password.sendKeys(pas);
-		loginButton.click();
+		driver.findElement(By.xpath("//input[@value='Login']")).click();
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		//home page is the landing page of login page.
 		//login page should return home page objects

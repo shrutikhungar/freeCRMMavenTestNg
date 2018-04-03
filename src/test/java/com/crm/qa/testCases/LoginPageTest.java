@@ -32,7 +32,7 @@ public class LoginPageTest extends TestBase{
 		}
 	}
 	
-	
+	/*
 	@Test(priority=1)
 	public void ValidateloginPageTitleTest() {
 		String actualPageTitle=loginPageObj.getLoginPageTitle();
@@ -43,11 +43,12 @@ public class LoginPageTest extends TestBase{
 	public void validateCrmLogoTest() {
 		boolean imageCRM=loginPageObj.getImageCRM();
 		Assert.assertTrue(imageCRM);
-	}
+	}*/
 	
 	@Test(priority=3)
 	public void validateLoginTest() throws Exception {
-		homePageObj=loginPageObj.performLogin("shrutkhungar","infyinfy");
+		loginPageObj.performLogin("shrutikhungar","infyinfy");
+		
 	}
 	
 	@AfterMethod

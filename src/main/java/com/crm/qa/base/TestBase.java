@@ -35,7 +35,7 @@ public class TestBase{
 		switch(browserName)
 		{
 		   	case "chrome" :
-			System.setProperty("webdriver.chrome.driver", "C:\\Shruti\\Study\\Selenium\\Selenium Downloads\\Driver\\chromedriver_win32\\chromedriver_win32\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\Shruti\\Study\\Selenium\\Selenium Downloads\\Driver\\chromedriver_win32\\chromedriver_win32_2.37\\chromedriver.exe");
 			driver=new ChromeDriver();
 			break;
 			

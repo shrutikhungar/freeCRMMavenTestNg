@@ -2,6 +2,7 @@ package com.crm.qa.pages;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -9,10 +10,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.crm.qa.base.TestBase;
+import com.crm.qa.util.TestUtil;
 
 public class HomePage extends TestBase{
 	
-	@FindBy(xpath="//div[@id='dispAlertMessage']//following-sibling::table//td[@class='headertext'][1]") WebElement userNameText;
+	@FindBy(xpath="//td[contains(text(),'User: shruti khungar')]") WebElement userNameText;
 	@FindBy(xpath="//a[contains(text(),'Contacts')]") WebElement contactsLink;
 	@FindBy(xpath="//a[contains(text(),'Deals')]") WebElement dealsLink;
 	@FindBy(xpath="//a[contains(text(),'Tasks')]") WebElement tasksLink;
@@ -29,8 +31,12 @@ public class HomePage extends TestBase{
 		return homePageTitle;
 	}
 	
-	public ContactsPage clickContactLink() {
-		contactsLink.click();
+	public ContactsPage clickContactLink() throws Exception {
+		if (contactsLink.isDisplayed()) {
+			contactsLink.click();
+			Thread.sleep(30000);
+		}else
+		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT,TimeUnit.SECONDS);
 		return new ContactsPage();
 	}
 	
@@ -45,12 +51,8 @@ public class HomePage extends TestBase{
 	}
 	
 	public boolean getUserNameHomePageLabel() {
-		System.out.println("userNameText: " +userNameText);
-		List<WebElement> getUserNameLabel=driver.findElements(By.xpath("//div[@id='dispAlertMessage']//following-sibling::table//td[@class='headertext']"));
-		WebElement ele=getUserNameLabel.get(0);
-		String getUserNameLabelText=ele.getText();
-		//String getuserNameText=getUserNameLabel[0];
-		return userNameText.isDisplayed();		
+		
+		return 	userNameText.isDisplayed();
 	}
 	
 	public boolean logoutButtonVisible() {
