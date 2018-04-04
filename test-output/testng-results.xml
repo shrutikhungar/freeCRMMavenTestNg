@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="105869" started-at="2018-04-04T07:24:54Z" finished-at="2018-04-04T07:26:40Z">
+  <suite name="Default suite" duration-ms="43676" started-at="2018-04-04T07:28:17Z" finished-at="2018-04-04T07:29:01Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="105869" started-at="2018-04-04T07:24:54Z" finished-at="2018-04-04T07:26:40Z">
+    <test name="Default test" duration-ms="43676" started-at="2018-04-04T07:28:17Z" finished-at="2018-04-04T07:29:01Z">
       <class name="com.crm.qa.testCases.NewContactPageTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.crm.qa.testCases.NewContactPageTest@313ac989]" name="setUp" is-config="true" duration-ms="28757" started-at="2018-04-04T12:54:54Z" finished-at="2018-04-04T12:55:23Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.crm.qa.testCases.NewContactPageTest@29ee9faa]" name="setUp" is-config="true" duration-ms="40426" started-at="2018-04-04T12:58:17Z" finished-at="2018-04-04T12:58:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="validateNewContactSave()[pri:0, instance:com.crm.qa.testCases.NewContactPageTest@313ac989]" name="validateNewContactSave" duration-ms="77102" started-at="2018-04-04T12:55:23Z" finished-at="2018-04-04T12:56:40Z">
+        <test-method status="PASS" signature="validateNewContactSave()[pri:0, instance:com.crm.qa.testCases.NewContactPageTest@29ee9faa]" name="validateNewContactSave" duration-ms="3227" started-at="2018-04-04T12:58:58Z" finished-at="2018-04-04T12:59:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateNewContactSave -->
