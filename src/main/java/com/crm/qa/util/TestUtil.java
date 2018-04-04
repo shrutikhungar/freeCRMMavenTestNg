@@ -56,9 +56,9 @@ public class TestUtil extends TestBase{
 		Object[][] xlDataArr=new Object[xlRow][xlCol];
 		
 		//filling array object: ISSUE: NOT FILLING LAST ROW
-		for (int i=1;i<xlRow;i++) {
+		for (int i=0;i<xlRow;i++) {
 			for (int j=0;j<xlCol;j++) {
-				xlDataArr[i][j]=sheetObj.getRow(i).getCell(j).toString();
+				xlDataArr[i][j]=sheetObj.getRow(i+1).getCell(j).toString();
 				System.out.println("data " + i + ":" + j + "is: "+xlDataArr[i][j]);
 			}
 		}

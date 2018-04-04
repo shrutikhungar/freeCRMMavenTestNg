@@ -5,7 +5,7 @@
     <classes>
       <class name="com.crm.qa.testCases.NewContactPageTest">
         <methods>
-          <include name="validateNewContactSave" invocation-numbers="0 1"/>
+          <include name="validateNewContactSave"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.crm.qa.testCases.NewContactPageTest -->
