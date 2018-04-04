@@ -66,9 +66,8 @@ public class HomePage extends TestBase{
 	public void clickNewContactLink() throws Exception {
 		//testUtilObj.switchToFrame("mainpanel");
 		Actions actionObj=new Actions(driver);	
-		Thread.sleep(3000);
-		actionObj.moveToElement(newContactLink).build().perform();
-		Thread.sleep(3000);
+		testUtilObj.switchToFrame("mainpanel");
+		actionObj.moveToElement(contactsLink).build().perform();
 		newContactLink.click();
 	}
 }
