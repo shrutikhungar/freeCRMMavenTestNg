@@ -27,7 +27,6 @@ public class TestBase{
 		currentUsersHomeDir = System.getProperty("user.dir");
 		FileInputStream fis=new FileInputStream(currentUsersHomeDir +"\\src\\main\\java\\com\\crm\\qa\\config\\config.properties");
 		prop.load(fis);
-		System.out.println(prop.getProperty("browser"));
 	}
 	
 	public static void initialization() {
@@ -54,11 +53,10 @@ public class TestBase{
 			driver=new ChromeDriver();
 			break;
 		}
-		System.out.println(driver);
+		
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
-		System.out.println(prop.getProperty("url"));
 		driver.get(prop.getProperty("url"));
 		
 	}
