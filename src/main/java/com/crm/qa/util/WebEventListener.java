@@ -151,7 +151,12 @@ public class WebEventListener extends TestBase implements WebDriverEventListener
 	@Override
 	public void onException(Throwable error, WebDriver driver) {
 		System.out.println("Exception occured: " + error);
-		TestUtil.takeScreenshotAtEndOfTest();
+		try {
+			TestUtil.takeScreenshotAtEndOfTest();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

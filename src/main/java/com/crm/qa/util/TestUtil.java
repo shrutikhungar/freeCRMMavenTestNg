@@ -9,11 +9,16 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 import com.crm.qa.base.TestBase;
 
@@ -33,9 +38,18 @@ public class TestUtil extends TestBase{
 	public void switchToFrame(String frameName) {
 		driver.switchTo().frame(frameName);
 	}
-	
-	public static void takeScreenshotAtEndOfTest() {
+
+	public static void takeScreenshotAtEndOfTest() throws Exception {
+		//Date date = new Date();
+		//SimpleDateFormat sdf = new SimpleDateFormat("ddMM_hmmss");
+		//String formattedDate = sdf.format(date);
+
+		//System.out.println("formattedDate is: "+formattedDate); // 12/01/2011 4:48:16 PM
 		
+		TakesScreenshot ts=(TakesScreenshot)driver;
+		File sourceFile = ts.getScreenshotAs(OutputType.FILE);
+		File destFile=new File("./Screenshots/" +"_"+System.currentTimeMillis()+".png");
+		FileUtils.copyFile(sourceFile, destFile);
 	}
 	
 	public Object[][] readXLData(String sheetName) {
