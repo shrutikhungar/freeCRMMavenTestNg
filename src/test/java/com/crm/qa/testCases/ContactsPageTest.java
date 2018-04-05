@@ -33,6 +33,7 @@ public class ContactsPageTest extends TestBase{
 		homePageObj=loginPageObj.performLogin("shrutikhungar", "infyinfy");
 		testUtilObj.switchToFrame("mainpanel");
 		ContactsPageObj=homePageObj.clickContactLink();
+		System.out.println("Contact link clicked");
 	}
 	
 	@Test
