@@ -34,6 +34,10 @@ public class TestUtil extends TestBase{
 		driver.switchTo().frame(frameName);
 	}
 	
+	public static void takeScreenshotAtEndOfTest() {
+		
+	}
+	
 	public Object[][] readXLData(String sheetName) {
 		File fileObj=new File(XLSHEETPATH);
 		FileInputStream fis=null;

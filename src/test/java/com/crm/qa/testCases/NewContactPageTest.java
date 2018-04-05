@@ -34,7 +34,7 @@ public class NewContactPageTest extends TestBase{
 		homePageObj=new HomePage();
 		newContactPageObj=new NewContactPage();
 		homePageObj=LoginPageobj.performLogin("shrutikhungar", "infyinfy");
-		Thread.sleep(4000);
+		
 	}
 	
 	@DataProvider
@@ -54,5 +54,6 @@ public class NewContactPageTest extends TestBase{
 	public void tearDown() {
 		driver.close();
 	}
+	
 	
 }

@@ -14,12 +14,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import com.crm.qa.util.TestUtil;
+import com.crm.qa.util.WebEventListener;
 
 public class TestBase{
 	public static WebDriver driver;
 	public static Properties prop;
+	public static EventFiringWebDriver eventFiringObj;
+	public static WebEventListener eventListenerObj;
 	static String currentUsersHomeDir;
 	
 	public TestBase() throws IOException {
@@ -29,7 +33,7 @@ public class TestBase{
 		prop.load(fis);
 	}
 	
-	public static void initialization() {
+	public static void initialization() throws Exception {
 		String browserName=prop.getProperty("browser");
 		switch(browserName)
 		{
@@ -53,6 +57,13 @@ public class TestBase{
 			driver=new ChromeDriver();
 			break;
 		}
+		
+		//To create a event log on console at every action that happens on web browser
+		eventFiringObj=new EventFiringWebDriver(driver);
+		eventListenerObj=new WebEventListener();
+		//Register EventListenerHandler with EventFiringWebDriver
+		eventFiringObj.register(eventListenerObj);
+		driver=eventFiringObj; 
 		
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
