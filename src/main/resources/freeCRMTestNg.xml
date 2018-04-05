@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="FreeCRM Application Test Suite">
+  
+  <listeners>
+	<listener class-name="com.crm.qa.util.ExtentReportListenerNG"></listener>
+  </listeners>
+  
   <test thread-count="5" name="Free CRM Test Cases">
     <classes>
         <class name="com.crm.qa.testCases.ContactsPageTest"/>
@@ -8,4 +13,5 @@
         <class name="com.crm.qa.testCases.LoginPageTest"/>
     </classes>
   </test> <!-- Test -->
+
 </suite> <!-- Suite -->
