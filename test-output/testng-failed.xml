@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite name="Failed suite [FreeCRM Application Test Suite]">
+  <listeners>
+    <listener class-name="com.crm.qa.util.ExtentReportListenerNG"/>
+  </listeners>
+  <test name="Free CRM Test Cases(failed)">
     <classes>
-      <class name="com.crm.qa.testCases.NewContactPageTest">
+      <class name="com.crm.qa.testCases.ContactsPageTest">
         <methods>
-          <include name="validateNewContactSave"/>
+          <include name="setUp"/>
+          <include name="validateContactsLabel"/>
+        </methods>
+      </class> <!-- com.crm.qa.testCases.ContactsPageTest -->
+      <class name="com.crm.qa.testCases.LoginPageTest">
+        <methods>
+          <include name="tearDown"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- com.crm.qa.testCases.NewContactPageTest -->
+      </class> <!-- com.crm.qa.testCases.LoginPageTest -->
+      <class name="com.crm.qa.testCases.HomePageTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.crm.qa.testCases.HomePageTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Free CRM Test Cases(failed) -->
+</suite> <!-- Failed suite [FreeCRM Application Test Suite] -->

@@ -23,6 +23,9 @@ public class LoginPageTest extends TestBase{
 
 	@BeforeMethod
 	public void setUp() {
+		System.out.println("******************************************************************************");
+		System.out.println("************************LoginPageTest test case started***********************");
+		
 		try {
 			initialization();
 		} catch (Exception e1) {
@@ -58,6 +61,8 @@ public class LoginPageTest extends TestBase{
 	
 	@AfterMethod
 	public void tearDown() {
+		System.out.println("******************************************************************************");
+		System.out.println("*************************LoginPageTest test case ended***********************");
 		driver.close();
 	}
 	

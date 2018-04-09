@@ -29,6 +29,8 @@ public class NewContactPageTest extends TestBase{
 	
 	@BeforeMethod
 	public void setUp() throws Exception {
+		System.out.println("******************************************************************************");
+		System.out.println("**********************NewContactPageTest test case started********************");
 		initialization();
 		LoginPageobj=new LoginPage();
 		homePageObj=new HomePage();
@@ -52,6 +54,9 @@ public class NewContactPageTest extends TestBase{
 	
 	@AfterMethod
 	public void tearDown() {
+		System.out.println("******************************************************************************");
+		System.out.println("***********************NewContactPageTest test case ended*********************");
+		
 		driver.close();
 	}
 	

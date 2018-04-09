@@ -26,6 +26,8 @@ public class ContactsPageTest extends TestBase{
 	
 	@BeforeMethod
 	public void setUp() throws Exception {
+		System.out.println("******************************************************************************");
+		System.out.println("**********************ContactsPageTest test case started**********************");
 		initialization();
 		loginPageObj=new LoginPage();
 		testUtilObj=new TestUtil();
@@ -43,6 +45,8 @@ public class ContactsPageTest extends TestBase{
 	
 	@AfterMethod
 	public void tearDown() {
+		System.out.println("******************************************************************************");
+		System.out.println("************************ContactsPageTest test case ended**********************");
 		driver.close();
 	}
 }

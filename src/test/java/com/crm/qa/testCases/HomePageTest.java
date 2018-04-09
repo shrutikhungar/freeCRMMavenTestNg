@@ -29,6 +29,8 @@ public class HomePageTest extends TestBase{
 	}
 	@BeforeMethod
 	public void setUp() {
+		System.out.println("******************************************************************************");
+		System.out.println("*************************HomePageTest test case started***********************");
 		try {
 			initialization();
 		} catch (Exception e1) {
@@ -78,6 +80,8 @@ public class HomePageTest extends TestBase{
 	
 	@AfterMethod
 	public void tearDown() {
+		System.out.println("******************************************************************************");
+		System.out.println("**************************HomePageTest test case ended************************");
 		driver.close();
 	}
 }
