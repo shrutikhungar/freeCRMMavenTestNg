@@ -55,7 +55,7 @@ public class NewContactPageTest extends TestBase{
 	@AfterMethod
 	public void tearDown() {
 		System.out.println("******************************************************************************");
-		System.out.println("***********************NewContactPageTest test case ended*********************");
+		System.out.println("*************NewContactPageTest test case ended. CLosing driver***************");
 		
 		driver.close();
 	}
